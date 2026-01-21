@@ -1,20 +1,40 @@
-import { Text, View } from "react-native";
+import { FlatList, Text, View } from "react-native";
 import { MealCard } from "./meal-card";
+import { MealsListHeader } from "./meals-list-header";
+import { Separetor } from "./separator";
 
 
 export function MealsList() {
 
+  const meals = [
+    {
+      id: '1',
+      name: 'Café da manhã',
+    },
+    {
+      id: '2',
+      name: 'Almoço',
+    },
+    {
+      id: '3',
+      name: 'Jantar',
+    },
+  ]
+
   return (
-    <View className="p-5">
-      <Text className="text-black-700 text-base font-sans-medium tracking-[1.28px]">
-        Refeições
-      </Text>
-      <View className="gap-8 mt-4">
-        <MealCard />
-        <MealCard />
-        <MealCard />
-        <MealCard />
-      </View>
-    </View>
+    <FlatList
+      data={meals}
+      keyExtractor={meal => meal.id}
+      ListHeaderComponent={<MealsListHeader />}
+      ItemSeparatorComponent={Separetor}
+      renderItem={({ item }) => (
+        <View className="mx-5">
+          <MealCard
+            id={item.id}
+            name={item.name}
+          />
+        </View>
+      )}
+    />
   )
 }
