@@ -37,16 +37,6 @@ export default function App() {
     <View className="flex-1 bg-white">
       <SafeAreaProvider>
         <HomeHeader />
-        <DateSwitcher />
-        <View className='mt-2'>
-          <DailyStats
-            calories={{ goal: 2000, current: 1350 }}
-            proteins={{ goal: 150, current: 90 }}
-            carbohydrates={{ goal: 250, current: 180 }}
-            fats={{ goal: 70, current: 50 }}
-          />
-        </View>
-        <View className='h-px mt-7 bg-gray-200' />
         <MealsList />
       </SafeAreaProvider>
     </View>
