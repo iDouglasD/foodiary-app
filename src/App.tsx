@@ -11,11 +11,10 @@ import { View } from 'react-native';
 import { useEffect } from 'react';
 
 import './styles/global.css';
-import { HomeHeader } from './components/home-header';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { DateSwitcher } from './components/date-switcher';
 import { DailyStats } from './components/daily-stats';
-import { MealsList } from './components/meals-list';
+import { Home } from './screens/home/home';
 
 SplashScreen.preventAutoHideAsync();
 
@@ -36,8 +35,7 @@ export default function App() {
   return (
     <View className="flex-1 bg-white">
       <SafeAreaProvider>
-        <HomeHeader />
-        <MealsList />
+        <Home />
       </SafeAreaProvider>
     </View>
   );
