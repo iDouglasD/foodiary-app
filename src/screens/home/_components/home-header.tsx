@@ -1,7 +1,7 @@
 import { LogOutIcon } from "lucide-react-native";
 import { Text, TouchableOpacity, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
-import { colors } from "../styles/colors";
+import { colors } from "../../../styles/colors";
 
 export function HomeHeader() {
   return (
